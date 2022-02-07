@@ -1,3 +1,6 @@
+import re
+
+
 def add(x, y):
     return x + y
 
@@ -15,6 +18,17 @@ def divide(x, y):
 
 
 import math
+
+def sin(num):
+    return math.sin(math.degrees(num))
+
+
+def cos(num):
+    return math.cos(math.degrees(num))
+
+
+def tan(num):
+    return math.tan(math.degrees(num))
 
 
 print("Please, select an operation: \n"
@@ -36,41 +50,46 @@ while True:
     else:
         print("Invalid input. Enter a number.")
         continue
-    if choice == 5:
-        print(math.sin(x))
-    elif choice == 6:
-        print(math.cos(x))
-    elif choice == 7:
-        print(math.tan(x))
-        next_calculation = input("Would you like to proceed? (yes/no): ")
-        if next_calculation == "no":
-            break
+
+    y = input("Enter the second number: ")
+    if y.isdigit():
+        y = float(y)
     else:
-        y = input("Enter the second number: ")
-        if y.isdigit():
-            y = float(y)
+        print("Invalid input. Enter a number.")
+        continue
+
+    if choice == 1:
+        print(x, "+", y, "=", add(x, y))
+
+    elif choice == 2:
+        print(x, "-", y, "=", subtract(x, y))
+
+    elif choice == 3:
+        print(x, "*", y, "=", multiply(x, y))
+
+    elif choice == 4:
+        if y == 0:
+            print("Error: division by zero.")
         else:
-            print("Invalid input. Enter a number.")
-            continue
-
-        if choice == 1:
-            print(x, "+", y, "=", add(x, y))
-
-        elif choice == 2:
-            print(x, "-", y, "=", subtract(x, y))
-
-        elif choice == 3:
-            print(x, "*", y, "=", multiply(x, y))
-
-        elif choice == 4:
-            if y == 0:
-                print("Error: division by zero.")
-            else:
-                print(x, "/", y, "=", divide(x, y))
-
-        else:
-            print("Invalid input.")
-
+            print(x, "/", y, "=", divide(x, y))
+    else:
         next_calculation = input("Would you like to proceed? (yes/no): ")
-        if next_calculation == "no":
+        if next_calculation == "yes":
+            continue
+        else:
             break
+
+    num = float(input("Enter your number: "))
+
+    if choice == 5:
+        print(math.sin(num))
+    elif choice == 6:
+        print(math.cos(num))
+    elif choice == 7:
+        print(math.tan(num))
+
+    next_calculation = input("Would you like to proceed? (yes/no): ")
+    if next_calculation == "no":
+        break
+    else:
+        print("Invalid input.")
