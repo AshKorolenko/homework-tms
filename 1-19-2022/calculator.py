@@ -72,12 +72,6 @@ while True:
             print("Error: division by zero.")
         else:
             print(x, "/", y, "=", divide(x, y))
-    else:
-        next_calculation = input("Would you like to proceed? (yes/no): ")
-        if next_calculation == "yes":
-            continue
-        else:
-            break
 
     num = float(input("Enter your number: "))
 
@@ -91,5 +85,3 @@ while True:
     next_calculation = input("Would you like to proceed? (yes/no): ")
     if next_calculation == "no":
         break
-    else:
-        print("Invalid input.")
