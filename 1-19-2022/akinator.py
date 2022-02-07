@@ -3,6 +3,7 @@ character_two = "Ruby Rose"
 character_three = "Spongebob Squarepants"
 character_four = "Cruella deVil"
 
+
 while True:
     answer_1 = input("Is your character human? (yes or no): ")
 
