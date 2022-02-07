@@ -1,6 +1,3 @@
-import re
-
-
 def add(x, y):
     return x + y
 
@@ -18,6 +15,7 @@ def divide(x, y):
 
 
 import math
+
 
 def sin(num):
     return math.sin(math.degrees(num))
